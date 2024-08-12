@@ -1,4 +1,4 @@
-const arr = [
+var arr = [
     {
         userName: "Test",
         lastName: "Test",
@@ -15,14 +15,16 @@ const arr = [
         email: "andrii@mail.ru" // Нам такі не підходять
     },
 ];
-        const trustedEmails = [];
 
-const re = /^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)?@(gmail|yahoo)\.com$/;
+const trustedEmails = [];
+let index = 0;
 
-        arr.forEach(function(user) {
-            if (re.test(user.email)) {
-                trustedEmails.push(user.email);
-            }
-        });
+for (let i = 0; i < arr.length; i++) {
+    const email = arr[i].email;
+    if (/^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)?@(gmail|yahoo)\.com$/.test(email)) {
+        trustedEmails[index] = email;
+        index++;
+    }
+}
 
-        console.log(trustedEmails);
+console.log(trustedEmails);
