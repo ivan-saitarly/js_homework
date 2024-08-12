@@ -1,0 +1,24 @@
+
+//ДЗ 7.1. Робота з обьектом
+
+let myObject = {
+    name: "Ivan",
+    type: "Example Type",
+    isArray: true,
+
+    getInfo:function (){
+        for (let key in this){
+            if(typeof this[key] !== "function"){
+                console.log(key, ":", this[key]);
+            }
+        }
+    }
+};
+
+console.log("Інформація про об'єкт до додавання нових властивостей:")
+myObject.getInfo();
+
+myObject.newProperty = "Нова властивість!";
+
+console.log("Інформація про об'єкт після додавання нових властивостей:")
+myObject.getInfo();
